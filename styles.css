@@ -1,0 +1,283 @@
+/******************************************************
+ * 0) AUTHENTICATION OVERLAY STYLES
+ ******************************************************/
+ .login-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  .login-box {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+  }
+  .login-box h2 {
+    margin-bottom: 1rem;
+  }
+  .login-box input[type="password"] {
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: 80%;
+    margin: 0.5rem 0;
+  }
+  .login-box button {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border: none;
+    background: #4f46e5;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+  }
+  .error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    display: none;
+  }
+  
+  /******************************************************
+   * 1) BASIC PAGE LAYOUT
+   ******************************************************/
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #f3f4f6;
+    color: #333;
+  }
+  #mainContent {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  header, footer {
+    flex: 0 0 auto;
+  }
+  #contentWrapper {
+    flex: 1 0 auto;
+    display: flex;
+  }
+  
+  /******************************************************
+   * 2) HEADER & FOOTER
+   ******************************************************/
+  header {
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    padding: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  .header-content {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  header h1 {
+    font-size: 1.6rem;
+    color: #fff;
+    font-weight: 600;
+  }
+  header input[type="text"] {
+    width: 300px;
+    max-width: 100%;
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 999px;
+    font-size: 1rem;
+    outline: none;
+    color: #333;
+    transition: background 0.3s, box-shadow 0.3s;
+  }
+  header input[type="text"]::placeholder {
+    color: #999;
+  }
+  header input[type="text"]:focus {
+    background: #fff;
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.3);
+  }
+  /* Theme Toggle Button */
+  #theme-toggle {
+    background: #fff;
+    color: #4f46e5;
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-left: 1rem;
+    transition: background 0.3s, color 0.3s;
+  }
+  #theme-toggle:hover {
+    background: #f0f0f0;
+  }
+  footer {
+    text-align: center;
+    background: #fff;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+    border-top: 1px solid #e5e5e5;
+  }
+  
+  /******************************************************
+   * 3) SIDE NAVIGATION & MAIN AREA
+   ******************************************************/
+  .side-nav {
+    width: 220px;
+    background: #fff;
+    padding: 1rem;
+    border-right: 1px solid #e5e5e5;
+    overflow-y: auto;
+    transition: background 0.3s, color 0.3s;
+  }
+  .side-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .side-nav li {
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    font-size: 0.95rem;
+    color: #333;
+  }
+  .side-nav li:hover {
+    background: #e0e0e0;
+  }
+  .side-nav li.active {
+    background: #4f46e5;
+    color: #fff;
+  }
+  .main-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  /******************************************************
+   * 4) SECTIONS & APP CARDS
+   ******************************************************/
+  .app-section {
+    margin-bottom: 2rem;
+  }
+  .app-section h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #4f46e5;
+    font-weight: 600;
+    border-bottom: 2px solid #e5e5e5;
+    padding-bottom: 0.25rem;
+  }
+  .app-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  .app-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1rem;
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    position: relative;
+  }
+  .app-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+  }
+  .app-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  .app-name {
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  /******************************************************
+   * 5) DARK MODE OVERRIDES
+   ******************************************************/
+  .dark-mode {
+    background: #1f2937;
+    color: #fff;
+  }
+  .dark-mode header {
+    background: #2c2f3b;
+  }
+  .dark-mode header h1 {
+    color: #fff;
+  }
+  .dark-mode header input[type="text"] {
+    background: #2c2f3b;
+    color: #fff;
+  }
+  .dark-mode #theme-toggle {
+    background: #2c2f3b;
+    color: #fff;
+    border: 1px solid #444;
+  }
+  .dark-mode #theme-toggle:hover {
+    background: #3c3b5a;
+  }
+  .dark-mode .app-section h2 {
+    color: #a3bffa;
+    border-bottom-color: #3c3b5a;
+  }
+  .dark-mode .app-card {
+    background: #2c2f3b;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.05);
+  }
+  .dark-mode .app-card:hover {
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+  }
+  .dark-mode footer {
+    background: #2c2f3b;
+    color: #ccc;
+    border-top-color: #3c3b5a;
+  }
+  /* Dark mode: change side navigation background to black and update nav item style */
+  .dark-mode .side-nav {
+    background: black;
+    border-right: 1px solid #000;
+  }
+  .dark-mode .side-nav li {
+    /* Updated navigation items in dark mode: mimic the style of app-section h2 */
+    color: #a3bffa;
+    border-bottom: 1px solid #3c3b5a;
+  }
+  .dark-mode .side-nav li:hover {
+    background: #333;
+  }
+  .dark-mode .side-nav li.active {
+    background: #6366f1;
+    color: #fff;
+  }
+  
