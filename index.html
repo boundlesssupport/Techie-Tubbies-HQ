@@ -1,21 +1,21 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Techi Tubbies Headquarters </title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Techi Tubbies Headquarters</title>
 
-  <!-- Favicon Links -->
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
-  <!-- Link to external CSS -->
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <!-- ===== Authentication Overlay ===== -->
-  <!--
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- ===== Authentication Overlay ===== -->
+    <!--
   <div class="login-overlay" id="loginOverlay">
     <div class="login-box">
       <h2>Please Enter Access Code</h2>
@@ -28,460 +28,836 @@
     </div>
   </div>
   -->
-  <!-- End Overlay -->
+    <!-- End Overlay -->
 
-  <!-- MAIN FLEX CONTAINER (fills screen) -->
-  <div id="mainContent">
-    <!-- HEADER -->
-    <header>
-      <div class="header-content">
-        <h1>Techie Tubbies Headquarters</h1>
-        <input
-          type="text"
-          id="searchInput"
-          placeholder="Search for an app..."
-          onkeyup="filterApps()"
-        />
-        <!-- Theme Toggle Button -->
-        <button id="theme-toggle">Dark Mode</button>
-      </div>
-    </header>
+    <!-- MAIN FLEX CONTAINER (fills screen) -->
+    <div id="mainContent">
+      <!-- HEADER -->
+      <header>
+        <div class="header-content">
+          <h1>Techie Tubbies Headquarters</h1>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search for an app..."
+            onkeyup="filterApps()"
+          />
+          <!-- Theme Toggle Button -->
+          <button id="theme-toggle">Dark Mode</button>
+        </div>
+      </header>
 
-    <!-- CONTENT WRAPPER: Nav on left, main area on right -->
-    <div id="contentWrapper">
-      <!-- SIDE NAVIGATION -->
-      <nav class="side-nav">
-        <ul>
-          <li onclick="filterByCategory('all')">All</li>
-          <!--<li onclick="filterByCategory('recently-used')">Recently Used</li>-->
-          <li onclick="filterByCategory('must-haves')">Must-Haves</li>
-          <li onclick="filterByCategory('Support Tools')">Support Tools</li>
-          <li onclick="filterByCategory('boundless-toolkit')">Boundless Toolkit</li>
-          <li onclick="filterByCategory('lms')">LMS & School Portal</li>
-          <li onclick="filterByCategory('work')">Work</li>
-          <li onclick="filterByCategory('student-support')">Student Support Page</li>
-        </ul>
-      </nav>
+      <!-- CONTENT WRAPPER: Nav on left, main area on right -->
+      <div id="contentWrapper">
+        <!-- SIDE NAVIGATION -->
+        <nav class="side-nav">
+          <ul>
+            <li onclick="filterByCategory('all')">All</li>
+            <!--<li onclick="filterByCategory('recently-used')">Recently Used</li>-->
+            <li onclick="filterByCategory('must-haves')">Must-Haves</li>
+            <li onclick="filterByCategory('Support Tools')">Support Tools</li>
+            <li onclick="filterByCategory('boundless-toolkit')">
+              Boundless Toolkit
+            </li>
+            <li onclick="filterByCategory('lms')">LMS & School Portal</li>
+            <li onclick="filterByCategory('work')">Work</li>
+            <li onclick="filterByCategory('student-support')">
+              Student Support Page
+            </li>
+          </ul>
+        </nav>
 
-      <!-- MAIN AREA -->
-      <div class="main-area">
-        <main>
-          <!-- RECENTLY USED (Dynamic) -->
-          <!--
+        <!-- MAIN AREA -->
+        <div class="main-area">
+          <main>
+            <!-- RECENTLY USED (Dynamic) -->
+            <!--
           <section class="app-section" id="recently-used">
             <h2>Recently Used</h2>
             <div class="app-grid"></div>
           </section>
           -->
 
-          <!-- BOUNDLESS TOOLKIT LINKS -->
-          <section class="app-section" id="boundless-toolkit">
-            <h2>Boundless Toolkit</h2>
-            <div class="app-grid">
-
-                <a class="app-card" data-app-id="oxford-btl" href="https://constructeducation-team.atlassian.net/wiki/x/8w2pAQ" target="_blank" onclick="trackRecentlyUsed(event)">
-                    <i class="icon-1"></i>
-                    <!-- <div class="app-icon" href="UOxfordico.ico"></div><br/> -->
-                    <div class="app-name">Oxford University</div>
-                </a>
-
-                <a class="app-card" data-app-id="duquesne-btl" href="https://constructeducation-team.atlassian.net/wiki/x/kAqpAQ" target="_blank" onclick="trackRecentlyUsed(event)">
-                    <i class="icon-2"></i>
-                    <!-- <div class="app-icon">🏛</div> -->
-                    <div class="app-name">Duquesne University</div>
-                </a>
-
-                <a class="app-card" data-app-id="maryville-btl" href="https://constructeducation-team.atlassian.net/wiki/x/4AOoAQ" target="_blank" onclick="trackRecentlyUsed(event)">
-                    <i class="icon-3"></i>
-                    <!-- <div class="app-icon">📚</div> -->
-                    <div class="app-name">Maryville University</div>
-                </a>
-
-                <a class="app-card" data-app-id="usc-btl" href="https://constructeducation-team.atlassian.net/wiki/x/AYCoAQ" target="_blank" onclick="trackRecentlyUsed(event)">
-                    <i class="icon-4"></i>
-                    <!-- <div class="app-icon">🏫</div> -->
-                    <div class="app-name">University of Southern California</div>
-                </a>
-
-                <a class="app-card" data-app-id="regis-btl" href="https://constructeducation-team.atlassian.net/wiki/x/AQCmAQ" target="_blank" onclick="trackRecentlyUsed(event)">
-                    <i class="icon-5"></i>
-                    <!-- <div class="app-icon">🏅</div> -->
-                    <div class="app-name">Regis College</div>
-                </a>
-
-                <a class="app-card" data-app-id="bradley-btl" href="https://constructeducation-team.atlassian.net/wiki/x/MAB_/" target="_blank" onclick="trackRecentlyUsed(event)">
-                    <i class="icon-6"></i>
-                    <!-- <div class="app-icon">📖</div> -->
-                    <div class="app-name">Bradley University</div>
-                </a>
-
-                <a class="app-card" data-app-id="maryland-btl" href="https://constructeducation-team.atlassian.net/wiki/x/PxCpAQ" target="_blank" onclick="trackRecentlyUsed(event)">
-                    <i class="icon-7"></i>
-                    <!-- <div class="app-icon">🎓</div> -->
-                    <div class="app-name">University of Maryland</div>
-                </a>
-
-                <a class="app-card" data-app-id="norwich-btl" href="https://constructeducation-team.atlassian.net/wiki/x/Zw_pAQ" target="_blank" onclick="trackRecentlyUsed(event)">
-                    <i class="icon-8"></i>
-                    <!-- <div class="app-icon">🏰</div> -->
-                    <div class="app-name">Norwich University</div>
-                </a>
-
-                <a class="app-card" data-app-id="nevada-btl" href="https://constructeducation-team.atlassian.net/wiki/x/nA6pAQ" target="_blank" onclick="trackRecentlyUsed(event)">
-                    <i class="icon-9"></i>
-                    <!-- <div class="app-icon">🌵</div> -->
-                    <div class="app-name">University of Nevada Reno</div>
-                </a>
-
-                <a class="app-card" data-app-id="adelaide-btl" href="https://constructeducation-team.atlassian.net/wiki/x/UQ2pAQ" target="_blank" onclick="trackRecentlyUsed(event)">
-                    <i class="icon-10"></i>
-                    <!-- <div class="app-icon">🇦🇺</div> -->
-                    <div class="app-name">University of Adelaide</div>
-                </a>
-
-                <a class="app-card" data-app-id="alabama-btl" href="https://constructeducation-team.atlassian.net/wiki/x/pAypAQ" target="_blank" onclick="trackRecentlyUsed(event)">
-                    <i class="icon-11"></i>
-                    <!-- <div class="app-icon">🏈</div> -->
-                    <div class="app-name">University of Alabama Birmingham</div>
-                </a>
-
-                <a class="app-card" data-app-id="north-dakota-btl" href="https://constructeducation-team.atlassian.net/wiki/x/cwupAQ" target="_blank" onclick="trackRecentlyUsed(event)">
-                    <i class="icon-12"></i>
-                    <!-- <div class="app-icon">❄️</div> -->
-                    <div class="app-name">University of North Dakota</div>
-                </a>
-
-                <a class="app-card" data-app-id="washington-state-btl" href="https://constructeducation-team.atlassian.net/wiki/x/ugmpAQ" target="_blank" onclick="trackRecentlyUsed(event)">
-                    <i class="icon-13"></i>
-                    <!-- <div class="app-icon">🏔</div> -->
-                    <div class="app-name">Washington State University</div>
-                </a>
-
-                <a class="app-card" data-app-id="wake-forest-btl" href="https://constructeducation-team.atlassian.net/wiki/x/lwmpAQ" target="_blank" onclick="trackRecentlyUsed(event)">
-                    <i class="icon-14"></i>
-                    <!-- <div class="app-icon">🌲</div> -->
-                    <div class="app-name">Wake Forest University</div>
-                </a>
-
-                <a class="app-card" data-app-id="hawaii-pacific-btl" href="https://constructeducation-team.atlassian.net/wiki/x/SQipAQ" target="_blank" onclick="trackRecentlyUsed(event)">
-                    <i class="icon-15"></i>
-                    <!-- <div class="app-icon">🏝</div> -->
-                    <div class="app-name">Hawaii Pacific University</div>
-                </a>
-
-                <a class="app-card" data-app-id="california-riverside-btl" href="https://constructeducation-team.atlassian.net/wiki/x/tgepAQ" target="_blank" onclick="trackRecentlyUsed(event)">
-                    <i class="icon-16"></i>
-                    <!-- <div class="app-icon">🌞</div> -->
-                    <div class="app-name">University of California Riverside</div>
-                </a>
-
-                <a class="app-card" data-app-id="london-business-btl" href="https://constructeducation-team.atlassian.net/wiki/x/8QapAQ" target="_blank" onclick="trackRecentlyUsed(event)">
-                    <!-- <i class="icon-17"></i> -->
-                    <div class="app-icon">💼</div>
-                    <div class="app-name">London Business School</div>
-                </a>
-
-                <a class="app-card" data-app-id="construct-resources-btl" href="https://sightlinemedia.sharepoint.com/:f:/r/sites/BLProductsServices/BL%20Services/Shared%20Documents/Learning%20Services/Help%20Desk/2.2%20-%20Training%20and%20Development/Resources%20for%20Construct%20Team?csf=1&web=1&e=yog9Jm" target="_blank" onclick="trackRecentlyUsed(event)">
-                    <div class="app-icon">🛠</div>
-                    <div class="app-name">Resources for Construct Team</div>
-                </a>
-            </div>
-        </section>
-
-
-          <!-- LEARNING MANAGEMENT SYSTEM -->
-          <section class="app-section" id="lms">
-            <h2>Learning Management System & School Portal</h2>
-            <div class="app-grid">
-                <a class="app-card" data-app-id="lms-courses" href="https://myonline.regiscollege.edu/my/" target="_blank" onclick="trackRecentlyUsed(event)">
-                    <i class="icon-18"></i>
-                    <!-- <div class="app-icon">🎓</div> -->
-                    <div class="app-name">Regis College</div>
-                </a>
-
-                <a class="app-card" data-app-id="usc-lms" href="https://mcm.usc.edu/login/embanet.php" target="_blank" onclick="trackRecentlyUsed(event)">
-                    <i class="icon-18"></i>
-                    <!-- <div class="app-icon">🎓</div> -->
-                    <div class="app-name">University of Southern California</div>
-                </a>
-
-                <a class="app-card" data-app-id="oxford-lms" href="https://oxfordcourses.brightspace.com/d2l/home" target="_blank" onclick="trackRecentlyUsed(event)">
-                    <i class="icon-19"></i>
-                    <!-- <div class="app-icon">🎓</div> -->
-                    <div class="app-name">Oxford University</div>
-                </a>
-
-                <a class="app-card" data-app-id="canvas-sandbox" href="https://proversity.instructure.com/" target="_blank" onclick="trackRecentlyUsed(event)">
-                    <i class="icon-20"></i>
-                    <!-- <div class="app-icon">🎓</div> -->
-                    <div class="app-name">Construct Canvas Sandbox</div>
-                </a>
-
-                <a class="app-card" data-app-id="bradley-directory" href="https://webapp2.bradley.edu/directorylookup/search" target="_blank" onclick="trackRecentlyUsed(event)">
-                    <i class="icon-6"></i>
-                    <!-- <div class="app-icon">📖</div> -->
-                    <div class="app-name">Bradley Directory</div>
-                </a>
-
-                <a class="app-card" data-app-id="bradley-bunetid" href="https://signin.bradley.edu/cas/login?service=https://mybu.bradley.edu/MyBU/Login" target="_blank" onclick="trackRecentlyUsed(event)">
-                    <div class="app-icon">🔑</div>
-                    <div class="app-name">Bradley BUnetID (Change Password)</div>
-                </a>
-            </div>
-        </section>
-
-
-<!-- TOOLS -->
-<section class="app-section" id="Support Tools">
-    <h2>Tools</h2>
-    <div class="app-grid">
-        <a class="app-card" data-app-id="salesforce" href="https://constructeducation.lightning.force.com/" target="_blank" onclick="trackRecentlyUsed(event)">
-            <i class="icon-21"></i>
-            <!-- <div class="app-icon">🚀</div> -->
-            <div class="app-name">Salesforce</div>
-        </a>
-
-        <a class="app-card" data-app-id="slack" href="https://proversity-team.slack.com/" target="_blank" onclick="trackRecentlyUsed(event)">
-            <i class="icon-22"></i>
-            <!-- <div class="app-icon">💬</div> -->
-            <div class="app-name">Slack</div>
-        </a>
-
-        <a class="app-card" data-app-id="bradley-directory" href="https://webapp2.bradley.edu/directorylookup/search" target="_blank" onclick="trackRecentlyUsed(event)">
-            <div class="app-icon">📖</div>
-            <div class="app-name">Bradley Directory</div>
-        </a>
-
-        <a class="app-card" data-app-id="bradley-bunetid" href="https://signin.bradley.edu/cas/login?service=https://mybu.bradley.edu/MyBU/Login" target="_blank" onclick="trackRecentlyUsed(event)">
-            <div class="app-icon">🔑</div>
-            <div class="app-name">Bradley BUnetID (Change Password)</div>
-        </a>
-
-        <a class="app-card" data-app-id="confluence" href="https://constructeducation-team.atlassian.net/" target="_blank" onclick="trackRecentlyUsed(event)">
-            <i class="icon-23"></i>
-            <!-- <div class="app-icon">📜</div> -->
-            <div class="app-name">Confluence</div>
-        </a>
-
-        <a class="app-card" data-app-id="jira" href="https://constructeducation-team.atlassian.net/jira/" target="_blank" onclick="trackRecentlyUsed(event)">
-            <i class="icon-24"></i>
-            <!-- <div class="app-icon">📝</div> -->
-            <div class="app-name">Jira</div>
-        </a>
-
-        <a class="app-card" data-app-id="gmail" href="https://mail.google.com/" target="_blank" onclick="trackRecentlyUsed(event)">
-            <i class="icon-25"></i>
-            <!-- <div class="app-icon">📧</div> -->
-            <div class="app-name">Gmail</div>
-        </a>
-
-        <a class="app-card" data-app-id="chatgpt" href="https://chatgpt.com/" target="_blank" onclick="trackRecentlyUsed(event)">
-            <div class="app-icon">🤖</div>
-            <div class="app-name">ChatGPT</div>
-        </a>
-
-        <a class="app-card" data-app-id="pickaxe" href="https://beta.pickaxeproject.com/auth/login?redirectid=dashboard" target="_blank" onclick="trackRecentlyUsed(event)">
-            <div class="app-icon">⛏</div>
-            <div class="app-name">PickAxe</div>
-        </a>
-
-        <a class="app-card" data-app-id="timezone-converter" href="https://chromewebstore.google.com/detail/time-zone-converter-savvy/plhnjpnBkmDmooidEifhKnoBdKgBof?hl=en" target="_blank" onclick="trackRecentlyUsed(event)">
-          <div class="app-icon">🌍</div>
-          <div class="app-name">Time Zone Converter</div>
-      </a>
-
-      <a class="app-card" data-app-id="link-to-text" href="https://chromewebstore.google.com/detail/link-to-text-fragment/pbcodcPjFjdpcineAMNnmBkkmKdpAJg" target="_blank" onclick="trackRecentlyUsed(event)">
-          <div class="app-icon">🔗</div>
-          <div class="app-name">Link to Text Fragment</div>
-      </a>
-
-      <a class="app-card" data-app-id="magical-ai" href="https://chromewebstore.google.com/detail/magical-ai-agent-for-auto/iibninhMiggEhlcDolCilmHaciGhJamp" target="_blank" onclick="trackRecentlyUsed(event)">
-          <div class="app-icon">📚</div>
-          <div class="app-name">Magical</div>
-      </a>
-    </div>
-</section>
-
-
-          <!-- WORK -->
-          <section class="app-section" id="work">
-            <h2>Work</h2>
-            <div class="app-grid">
-              <a class="app-card" data-app-id="team-schedule" href="https://docs.google.com/spreadsheets/d/1eNtVO3q0Hh99HpaptCpbPjNyMInNtaRPpzn-tSSCyNY/edit?pli=1&gid=537241561#gid=537241561" target="_blank" onclick="trackRecentlyUsed(event)">
-                  <div class="app-icon">📊</div>
-                  <div class="app-name">Team Schedule</div>
-              </a>
-
-              <a class="app-card" data-app-id="google-meet" href="https://meet.google.com" target="_blank" onclick="trackRecentlyUsed(event)">
-                  <div class="app-icon">🎥</div>
-                  <div class="app-name">Google Meet</div>
-              </a>
-
-              <a class="app-card" data-app-id="calendar" href="https://calendar.google.com/calendar/u/0/r?pli=1" target="_blank" onclick="trackRecentlyUsed(event)">
-                  <div class="app-icon">🗓</div>
-                  <div class="app-name">Calendar</div>
-              </a>
-
-              <a class="app-card" data-app-id="leave-calendar" href="https://docs.google.com/spreadsheets/d/1RjJLFK478g-haoGQa6314YdznhhEfdWnP3rzXql_GKM/edit?gid=888205070#gid=888205070" target="_blank" onclick="trackRecentlyUsed(event)">
-                  <div class="app-icon">🏖</div>
-                  <div class="app-name">Leave Calendar</div>
-              </a>
-
-              <a class="app-card" data-app-id="payspace" href="https://www.payspace.com/" target="_blank" onclick="trackRecentlyUsed(event)">
-                  <div class="app-icon">💰</div>
-                  <div class="app-name">Payspace</div>
-              </a>
-
-              <a class="app-card" data-app-id="policy-docs" href="https://sites.google.com/constructeducation.com/constructeducation-mainsite/policies-documents" target="_blank" onclick="trackRecentlyUsed(event)">
-                  <div class="app-icon">📜</div>
-                  <div class="app-name">Policy & Document Library</div>
-              </a>
-          </div>
-          </section>
-
-        <!-- STUDENT SUPPORT PAGE -->
-<section class="app-section" id="student-support">
-    <h2>Student Support Page</h2>
-    <div class="app-grid">
-        <a class="app-card" data-app-id="oxford-support" href="https://www.studentsupporthub.com/oxf/Oxford-Self-service-FAQ.html" target="_blank" onclick="trackRecentlyUsed(event)">
-            <i class="icon-1"></i>
-            <!-- <div class="app-icon">🎓</div> -->
-            <div class="app-name">Oxford University</div>
-        </a>
-
-        <a class="app-card" data-app-id="duquesne-support" href="https://www.studentsupporthub.com/du/DUQ-Self-service-FAQ.html" target="_blank" onclick="trackRecentlyUsed(event)">
-            <i class="icon-2"></i>
-            <!-- <div class="app-icon">🏛</div> -->
-            <div class="app-name">Duquesne University</div>
-        </a>
-
-        <a class="app-card" data-app-id="usc-support" href="https://www.studentsupporthub.com/emhaonline/USC-EMHA-Self-service-FAQ.html" target="_blank" onclick="trackRecentlyUsed(event)">
-            <i class="icon-4"></i>
-            <!-- <div class="app-icon">🏫</div> -->
-            <div class="app-name">University of Southern California</div>
-        </a>
-
-        <a class="app-card" data-app-id="regis-support" href="https://www.studentsupporthub.com/rc/RC-Self-service-FAQ.html" target="_blank" onclick="trackRecentlyUsed(event)">
-            <i class="icon-5"></i>
-            <!-- <div class="app-icon">🏅</div> -->
-            <div class="app-name">Regis College</div>
-        </a>
-
-        <a class="app-card" data-app-id="bradley-support" href="https://www.studentsupporthub.com/bradley/Self-service-FAQ.html" target="_blank" onclick="trackRecentlyUsed(event)">
-            <i class="icon-6"></i>
-            <!-- <div class="app-icon">📖</div> -->
-            <div class="app-name">Bradley University</div>
-        </a>
-
-        <a class="app-card" data-app-id="norwich-support" href="https://www.studentsupporthub.com/nu/NU-Self-service-FAQ.html" target="_blank" onclick="trackRecentlyUsed(event)">
-            <i class="icon-8"></i>
-            <!-- <div class="app-icon">🏰</div> -->
-            <div class="app-name">Norwich University</div>
-        </a>
-
-        <a class="app-card" data-app-id="nevada-support" href="https://www.studentsupporthub.com/unr/UNR-Self-service-FAQ.html" target="_blank" onclick="trackRecentlyUsed(event)">
-            <i class="icon-9"></i>
-            <!-- <div class="app-icon">🌵</div> -->
-            <div class="app-name">University of Nevada Reno</div>
-        </a>
-
-        <a class="app-card" data-app-id="adelaide-support" href="https://www.studentsupporthub.com/uoa/University-of-Adelaide-Self-service-FAQ.html" target="_blank" onclick="trackRecentlyUsed(event)">
-            <i class="icon-10"></i>
-            <!-- <div class="app-icon">🇦🇺</div> -->
-            <div class="app-name">University of Adelaide</div>
-        </a>
-
-        <a class="app-card" data-app-id="alabama-support" href="https://www.studentsupporthub.com/uab/UAB-Self-service-FAQ.html" target="_blank" onclick="trackRecentlyUsed(event)">
-            <i class="icon-11"></i>
-            <!-- <div class="app-icon">🏈</div> -->
-            <div class="app-name">University of Alabama Birmingham</div>
-        </a>
-
-        <a class="app-card" data-app-id="north-dakota-support" href="https://www.studentsupporthub.com/und/UND-Self-service-FAQ.html" target="_blank" onclick="trackRecentlyUsed(event)">
-            <i class="icon-12"></i>
-            <!-- <div class="app-icon">❄️</div> -->
-            <div class="app-name">University of North Dakota</div>
-        </a>
-
-        <a class="app-card" data-app-id="washington-state-support" href="https://www.studentsupporthub.com/wsu/WSU-Self-service-FAQ.html" target="_blank" onclick="trackRecentlyUsed(event)">
-            <i class="icon-13"></i>
-            <!-- <div class="app-icon">🏔</div> -->
-            <div class="app-name">Washington State University</div>
-        </a>
-
-        <a class="app-card" data-app-id="wake-forest-support" href="https://www.studentsupporthub.com/wfu/WFU-Self-service-FAQ.html" target="_blank" onclick="trackRecentlyUsed(event)">
-            <i class="icon-14"></i>
-            <!-- <div class="app-icon">🌲</div> -->
-            <div class="app-name">Wake Forest University</div>
-        </a>
-
-        <a class="app-card" data-app-id="hawaii-pacific-support" href="https://www.studentsupporthub.com/hpu/HPU-Self-service-FAQ.html" target="_blank" onclick="trackRecentlyUsed(event)">
-            <i class="icon-15"></i>
-            <!-- <div class="app-icon">🏝</div> -->
-            <div class="app-name">Hawaii Pacific University</div>
-        </a>
-
-        <a class="app-card" data-app-id="california-riverside-support" href="https://www.studentsupporthub.com/ucr/UCR-Self-service-FAQ.html" target="_blank" onclick="trackRecentlyUsed(event)">
-            <i class="icon-16"></i>
-            <!-- <div class="app-icon">🌞</div> -->
-            <div class="app-name">University of California Riverside</div>
-        </a>
-    </div>
-</section>
-
-
-          <!-- USEFUL LINKS -->
-          <section class="app-section" id="must-haves">
-            <h2>Must-Haves</h2>
-            <div class="app-grid">
-              <a class="app-card" data-app-id="salesforce" href="https://constructeducation.lightning.force.com/" target="_blank" onclick="trackRecentlyUsed(event)">
-                <i class="icon-21"></i>  
-                <!-- <div class="app-icon">🚀</div> -->
+            <!-- USEFUL LINKS -->
+            <section class="app-section" id="must-haves">
+              <h2>Must-Haves</h2>
+              <div class="app-grid">
+                <a
+                  class="app-card"
+                  data-app-id="salesforce"
+                  href="https://constructeducation.lightning.force.com/"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-21"></i>
+                  <!-- <div class="app-icon">🚀</div> -->
                   <div class="app-name">Salesforce</div>
-              </a>
+                </a>
 
-              <a class="app-card" data-app-id="slack" href="https://proversity-team.slack.com/" target="_blank" onclick="trackRecentlyUsed(event)">
-                <i class="icon-22"></i>  
-                <!-- <div class="app-icon">💬</div> -->
+                <a
+                  class="app-card"
+                  data-app-id="slack"
+                  href="https://proversity-team.slack.com/"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-22"></i>
+                  <!-- <div class="app-icon">💬</div> -->
                   <div class="app-name">Slack</div>
-              </a>
+                </a>
 
-              <a class="app-card" data-app-id="daily-standup" href="https://meet.google.com/zen-sdfd-rkb" target="_blank" onclick="trackRecentlyUsed(event)">
+                <a
+                  class="app-card"
+                  data-app-id="daily-standup"
+                  href="https://meet.google.com/zen-sdfd-rkb"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
                   <div class="app-icon">📅</div>
                   <div class="app-name">Daily Stand Up Meeting</div>
-              </a>
+                </a>
 
-              <a class="app-card" data-app-id="leave-calendar" href="https://calendar.google.com/calendar/u/0/r?pli=1" target="_blank" onclick="trackRecentlyUsed(event)">
+                <a
+                  class="app-card"
+                  data-app-id="leave-calendar"
+                  href="https://calendar.google.com/calendar/u/0/r?pli=1"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
                   <div class="app-icon">🗓</div>
                   <div class="app-name">Leave Calendar</div>
-              </a>
+                </a>
 
-              <a class="app-card" data-app-id="team-schedule" href="https://docs.google.com/spreadsheets/d/1eNtVO3q0Hh99HpaptCpbPjNyMlnNtaRPpzn-tSSCyNY/edit?pli=1&gid=537241561#gid=537241561" target="_blank" onclick="trackRecentlyUsed(event)">
+                <a
+                  class="app-card"
+                  data-app-id="team-schedule"
+                  href="https://docs.google.com/spreadsheets/d/1eNtVO3q0Hh99HpaptCpbPjNyMlnNtaRPpzn-tSSCyNY/edit?pli=1&gid=537241561#gid=537241561"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
                   <div class="app-icon">📊</div>
                   <div class="app-name">Team Schedule</div>
-              </a>
+                </a>
 
-              <a class="app-card" data-app-id="bradley-locate-user" href="https://webapp2.bradley.edu/directorylookup/search" target="_blank" onclick="trackRecentlyUsed(event)">
+                <a
+                  class="app-card"
+                  data-app-id="bradley-locate-user"
+                  href="https://webapp2.bradley.edu/directorylookup/search"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
                   <div class="app-icon">🔎</div>
                   <div class="app-name">Locate User For Bradley</div>
-              </a>
+                </a>
 
-              <a class="app-card" data-app-id="bradley-change-password" href="https://signin.bradley.edu/cas/login?service=https://mybu.bradley.edu/MyBU/Login" target="_blank" onclick="trackRecentlyUsed(event)">
+                <a
+                  class="app-card"
+                  data-app-id="bradley-change-password"
+                  href="https://signin.bradley.edu/cas/login?service=https://mybu.bradley.edu/MyBU/Login"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
                   <div class="app-icon">🔑</div>
                   <div class="app-name">Change Password For Bradley User</div>
-              </a>
-          </div>
-          </section>
-        </main>
+                </a>
+              </div>
+            </section>
+            <!-- TOOLS -->
+            <section class="app-section" id="Support Tools">
+              <h2>Tools</h2>
+              <div class="app-grid">
+                <a
+                  class="app-card"
+                  data-app-id="salesforce"
+                  href="https://constructeducation.lightning.force.com/"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-21"></i>
+                  <!-- <div class="app-icon">🚀</div> -->
+                  <div class="app-name">Salesforce</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="slack"
+                  href="https://proversity-team.slack.com/"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-22"></i>
+                  <!-- <div class="app-icon">💬</div> -->
+                  <div class="app-name">Slack</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="bradley-directory"
+                  href="https://webapp2.bradley.edu/directorylookup/search"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <div class="app-icon">📖</div>
+                  <div class="app-name">Bradley Directory</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="bradley-bunetid"
+                  href="https://signin.bradley.edu/cas/login?service=https://mybu.bradley.edu/MyBU/Login"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <div class="app-icon">🔑</div>
+                  <div class="app-name">Bradley BUnetID (Change Password)</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="confluence"
+                  href="https://constructeducation-team.atlassian.net/"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-23"></i>
+                  <!-- <div class="app-icon">📜</div> -->
+                  <div class="app-name">Confluence</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="jira"
+                  href="https://constructeducation-team.atlassian.net/jira/"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-24"></i>
+                  <!-- <div class="app-icon">📝</div> -->
+                  <div class="app-name">Jira</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="gmail"
+                  href="https://mail.google.com/"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-25"></i>
+                  <!-- <div class="app-icon">📧</div> -->
+                  <div class="app-name">Gmail</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="chatgpt"
+                  href="https://chatgpt.com/"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <div class="icon-26"></div>
+                  <div class="app-name">ChatGPT</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="pickaxe"
+                  href="https://beta.pickaxeproject.com/auth/login?redirectid=dashboard"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <div class="app-icon">⛏</div>
+                  <div class="app-name">PickAxe</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="timezone-converter"
+                  href="https://chromewebstore.google.com/detail/time-zone-converter-savvy/plhnjpnBkmDmooidEifhKnoBdKgBof?hl=en"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <div class="app-icon">🌍</div>
+                  <div class="app-name">Time Zone Converter</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="link-to-text"
+                  href="https://chromewebstore.google.com/detail/link-to-text-fragment/pbcodcPjFjdpcineAMNnmBkkmKdpAJg"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <div class="app-icon">🔗</div>
+                  <div class="app-name">Link to Text Fragment</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="magical-ai"
+                  href="https://chromewebstore.google.com/detail/magical-ai-agent-for-auto/iibninhMiggEhlcDolCilmHaciGhJamp"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <div class="app-icon">📚</div>
+                  <div class="app-name">Magical</div>
+                </a>
+              </div>
+            </section>
+
+            <!-- BOUNDLESS TOOLKIT LINKS -->
+            <section class="app-section" id="boundless-toolkit">
+              <h2>Boundless Toolkit</h2>
+              <div class="app-grid">
+                <a
+                  class="app-card"
+                  data-app-id="oxford-btl"
+                  href="https://constructeducation-team.atlassian.net/wiki/x/8w2pAQ"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-1"></i>
+                  <!-- <div class="app-icon" href="UOxfordico.ico"></div><br/> -->
+                  <div class="app-name">Oxford University</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="duquesne-btl"
+                  href="https://constructeducation-team.atlassian.net/wiki/x/kAqpAQ"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-2"></i>
+                  <!-- <div class="app-icon">🏛</div> -->
+                  <div class="app-name">Duquesne University</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="maryville-btl"
+                  href="https://constructeducation-team.atlassian.net/wiki/x/4AOoAQ"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-3"></i>
+                  <!-- <div class="app-icon">📚</div> -->
+                  <div class="app-name">Maryville University</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="usc-btl"
+                  href="https://constructeducation-team.atlassian.net/wiki/x/AYCoAQ"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-4"></i>
+                  <!-- <div class="app-icon">🏫</div> -->
+                  <div class="app-name">University of Southern California</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="regis-btl"
+                  href="https://constructeducation-team.atlassian.net/wiki/x/AQCmAQ"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-5"></i>
+                  <!-- <div class="app-icon">🏅</div> -->
+                  <div class="app-name">Regis College</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="bradley-btl"
+                  href="https://constructeducation-team.atlassian.net/wiki/x/MAB_/"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-6"></i>
+                  <!-- <div class="app-icon">📖</div> -->
+                  <div class="app-name">Bradley University</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="maryland-btl"
+                  href="https://constructeducation-team.atlassian.net/wiki/x/PxCpAQ"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-7"></i>
+                  <!-- <div class="app-icon">🎓</div> -->
+                  <div class="app-name">University of Maryland</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="norwich-btl"
+                  href="https://constructeducation-team.atlassian.net/wiki/x/Zw_pAQ"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-8"></i>
+                  <!-- <div class="app-icon">🏰</div> -->
+                  <div class="app-name">Norwich University</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="nevada-btl"
+                  href="https://constructeducation-team.atlassian.net/wiki/x/nA6pAQ"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-9"></i>
+                  <!-- <div class="app-icon">🌵</div> -->
+                  <div class="app-name">University of Nevada Reno</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="adelaide-btl"
+                  href="https://constructeducation-team.atlassian.net/wiki/x/UQ2pAQ"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-10"></i>
+                  <!-- <div class="app-icon">🇦🇺</div> -->
+                  <div class="app-name">University of Adelaide</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="alabama-btl"
+                  href="https://constructeducation-team.atlassian.net/wiki/x/pAypAQ"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-11"></i>
+                  <!-- <div class="app-icon">🏈</div> -->
+                  <div class="app-name">University of Alabama Birmingham</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="north-dakota-btl"
+                  href="https://constructeducation-team.atlassian.net/wiki/x/cwupAQ"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-12"></i>
+                  <!-- <div class="app-icon">❄️</div> -->
+                  <div class="app-name">University of North Dakota</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="washington-state-btl"
+                  href="https://constructeducation-team.atlassian.net/wiki/x/ugmpAQ"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-13"></i>
+                  <!-- <div class="app-icon">🏔</div> -->
+                  <div class="app-name">Washington State University</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="wake-forest-btl"
+                  href="https://constructeducation-team.atlassian.net/wiki/x/lwmpAQ"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-14"></i>
+                  <!-- <div class="app-icon">🌲</div> -->
+                  <div class="app-name">Wake Forest University</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="hawaii-pacific-btl"
+                  href="https://constructeducation-team.atlassian.net/wiki/x/SQipAQ"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-15"></i>
+                  <!-- <div class="app-icon">🏝</div> -->
+                  <div class="app-name">Hawaii Pacific University</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="california-riverside-btl"
+                  href="https://constructeducation-team.atlassian.net/wiki/x/tgepAQ"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-16"></i>
+                  <!-- <div class="app-icon">🌞</div> -->
+                  <div class="app-name">University of California Riverside</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="london-business-btl"
+                  href="https://constructeducation-team.atlassian.net/wiki/x/8QapAQ"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <!-- <i class="icon-17"></i> -->
+                  <div class="app-icon">💼</div>
+                  <div class="app-name">London Business School</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="construct-resources-btl"
+                  href="https://sightlinemedia.sharepoint.com/:f:/r/sites/BLProductsServices/BL%20Services/Shared%20Documents/Learning%20Services/Help%20Desk/2.2%20-%20Training%20and%20Development/Resources%20for%20Construct%20Team?csf=1&web=1&e=yog9Jm"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <div class="app-icon">🛠</div>
+                  <div class="app-name">Resources for Construct Team</div>
+                </a>
+              </div>
+            </section>
+
+            <!-- LEARNING MANAGEMENT SYSTEM -->
+            <section class="app-section" id="lms">
+              <h2>Learning Management System & School Portal</h2>
+              <div class="app-grid">
+                <a
+                  class="app-card"
+                  data-app-id="lms-courses"
+                  href="https://myonline.regiscollege.edu/my/"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-18"></i>
+                  <!-- <div class="app-icon">🎓</div> -->
+                  <div class="app-name">Regis College</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="usc-lms"
+                  href="https://mcm.usc.edu/login/embanet.php"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-18"></i>
+                  <!-- <div class="app-icon">🎓</div> -->
+                  <div class="app-name">University of Southern California</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="oxford-lms"
+                  href="https://oxfordcourses.brightspace.com/d2l/home"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-19"></i>
+                  <!-- <div class="app-icon">🎓</div> -->
+                  <div class="app-name">Oxford University</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="canvas-sandbox"
+                  href="https://proversity.instructure.com/"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-20"></i>
+                  <!-- <div class="app-icon">🎓</div> -->
+                  <div class="app-name">Construct Canvas Sandbox</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="bradley-directory"
+                  href="https://webapp2.bradley.edu/directorylookup/search"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-6"></i>
+                  <!-- <div class="app-icon">📖</div> -->
+                  <div class="app-name">Bradley Directory</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="bradley-bunetid"
+                  href="https://signin.bradley.edu/cas/login?service=https://mybu.bradley.edu/MyBU/Login"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <div class="app-icon">🔑</div>
+                  <div class="app-name">Bradley BUnetID (Change Password)</div>
+                </a>
+              </div>
+            </section>
+
+            <!-- WORK -->
+            <section class="app-section" id="work">
+              <h2>Work</h2>
+              <div class="app-grid">
+                <a
+                  class="app-card"
+                  data-app-id="team-schedule"
+                  href="https://docs.google.com/spreadsheets/d/1eNtVO3q0Hh99HpaptCpbPjNyMInNtaRPpzn-tSSCyNY/edit?pli=1&gid=537241561#gid=537241561"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <div class="app-icon">📊</div>
+                  <div class="app-name">Team Schedule</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="google-meet"
+                  href="https://meet.google.com"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <div class="app-icon">🎥</div>
+                  <div class="app-name">Google Meet</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="calendar"
+                  href="https://calendar.google.com/calendar/u/0/r?pli=1"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <div class="app-icon">🗓</div>
+                  <div class="app-name">Calendar</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="leave-calendar"
+                  href="https://docs.google.com/spreadsheets/d/1RjJLFK478g-haoGQa6314YdznhhEfdWnP3rzXql_GKM/edit?gid=888205070#gid=888205070"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <div class="app-icon">🏖</div>
+                  <div class="app-name">Leave Calendar</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="payspace"
+                  href="https://www.payspace.com/"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <div class="app-icon">💰</div>
+                  <div class="app-name">Payspace</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="policy-docs"
+                  href="https://sites.google.com/constructeducation.com/constructeducation-mainsite/policies-documents"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <div class="app-icon">📜</div>
+                  <div class="app-name">Policy & Document Library</div>
+                </a>
+              </div>
+            </section>
+
+            <!-- STUDENT SUPPORT PAGE -->
+            <section class="app-section" id="student-support">
+              <h2>Student Support Page</h2>
+              <div class="app-grid">
+                <a
+                  class="app-card"
+                  data-app-id="oxford-support"
+                  href="https://www.studentsupporthub.com/oxf/Oxford-Self-service-FAQ.html"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-1"></i>
+                  <!-- <div class="app-icon">🎓</div> -->
+                  <div class="app-name">Oxford University</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="duquesne-support"
+                  href="https://www.studentsupporthub.com/du/DUQ-Self-service-FAQ.html"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-2"></i>
+                  <!-- <div class="app-icon">🏛</div> -->
+                  <div class="app-name">Duquesne University</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="usc-support"
+                  href="https://www.studentsupporthub.com/emhaonline/USC-EMHA-Self-service-FAQ.html"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-4"></i>
+                  <!-- <div class="app-icon">🏫</div> -->
+                  <div class="app-name">University of Southern California</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="regis-support"
+                  href="https://www.studentsupporthub.com/rc/RC-Self-service-FAQ.html"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-5"></i>
+                  <!-- <div class="app-icon">🏅</div> -->
+                  <div class="app-name">Regis College</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="bradley-support"
+                  href="https://www.studentsupporthub.com/bradley/Self-service-FAQ.html"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-6"></i>
+                  <!-- <div class="app-icon">📖</div> -->
+                  <div class="app-name">Bradley University</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="norwich-support"
+                  href="https://www.studentsupporthub.com/nu/NU-Self-service-FAQ.html"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-8"></i>
+                  <!-- <div class="app-icon">🏰</div> -->
+                  <div class="app-name">Norwich University</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="nevada-support"
+                  href="https://www.studentsupporthub.com/unr/UNR-Self-service-FAQ.html"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-9"></i>
+                  <!-- <div class="app-icon">🌵</div> -->
+                  <div class="app-name">University of Nevada Reno</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="adelaide-support"
+                  href="https://www.studentsupporthub.com/uoa/University-of-Adelaide-Self-service-FAQ.html"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-10"></i>
+                  <!-- <div class="app-icon">🇦🇺</div> -->
+                  <div class="app-name">University of Adelaide</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="alabama-support"
+                  href="https://www.studentsupporthub.com/uab/UAB-Self-service-FAQ.html"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-11"></i>
+                  <!-- <div class="app-icon">🏈</div> -->
+                  <div class="app-name">University of Alabama Birmingham</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="north-dakota-support"
+                  href="https://www.studentsupporthub.com/und/UND-Self-service-FAQ.html"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-12"></i>
+                  <!-- <div class="app-icon">❄️</div> -->
+                  <div class="app-name">University of North Dakota</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="washington-state-support"
+                  href="https://www.studentsupporthub.com/wsu/WSU-Self-service-FAQ.html"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-13"></i>
+                  <!-- <div class="app-icon">🏔</div> -->
+                  <div class="app-name">Washington State University</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="wake-forest-support"
+                  href="https://www.studentsupporthub.com/wfu/WFU-Self-service-FAQ.html"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-14"></i>
+                  <!-- <div class="app-icon">🌲</div> -->
+                  <div class="app-name">Wake Forest University</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="hawaii-pacific-support"
+                  href="https://www.studentsupporthub.com/hpu/HPU-Self-service-FAQ.html"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-15"></i>
+                  <!-- <div class="app-icon">🏝</div> -->
+                  <div class="app-name">Hawaii Pacific University</div>
+                </a>
+
+                <a
+                  class="app-card"
+                  data-app-id="california-riverside-support"
+                  href="https://www.studentsupporthub.com/ucr/UCR-Self-service-FAQ.html"
+                  target="_blank"
+                  onclick="trackRecentlyUsed(event)"
+                >
+                  <i class="icon-16"></i>
+                  <!-- <div class="app-icon">🌞</div> -->
+                  <div class="app-name">University of California Riverside</div>
+                </a>
+              </div>
+            </section>
+          </main>
+        </div>
       </div>
+
+      <!-- FOOTER -->
+      <footer>
+        <p>© 2025 Techie Tubbies. All rights reserved.</p>
+      </footer>
     </div>
 
-    <!-- FOOTER -->
-    <footer>
-      <p>© 2025 Techie Tubbies. All rights reserved.</p>
-    </footer>
-  </div>
-
-  <script src="scripts.js"></script>
-</body>
+    <script src="scripts.js"></script>
+  </body>
 </html>
