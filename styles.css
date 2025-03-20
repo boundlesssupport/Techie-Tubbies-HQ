@@ -80,6 +80,11 @@
     background: linear-gradient(135deg, #4f46e5, #6366f1);
     padding: 0.5rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
   }
   .header-content {
     width: 90%;
@@ -146,6 +151,7 @@
     border-right: 1px solid #e5e5e5;
     overflow-y: auto;
     transition: background 0.3s, color 0.3s;
+    padding-top: 90px;
   }
   .side-nav ul {
     list-style: none;
@@ -173,6 +179,7 @@
     display: flex;
     flex-direction: column;
     padding: 1rem;
+    padding-top: 90px;
   }
   
   /******************************************************
@@ -220,9 +227,217 @@
     font-weight: 500;
     text-align: center;
   }
+
+    /******************************************************
+   * 5) Icons
+   ******************************************************/
+
+  .icon-1{
+    content: url('unioxico.ico');
+    background-size: cover;
+    width: 70px;
+    height: 50px;
+    display: block;
+    margin-bottom: 10px;
+    /* font-size: 2rem;
+    margin-bottom: 0.5rem; */
+  }
+  .icon-2{
+    content: url('duquesneico.ico');
+    background-size: cover;
+    width: 70px;
+    height: 50px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .icon-3{
+    content: url('MaryvilleUni.ico');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .icon-4{
+    content: url('USCico.ico');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .icon-5{
+    content: url('regisico.ico');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .icon-6{
+    content: url('Bradleyico.ico');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .icon-7{
+    content: url('unimaryico.ico');
+    background-size: cover;
+    width: 80px;
+    height: 50px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .icon-8{
+    content: url('NUico.ico');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .icon-9{
+    content: url('NVRenoico.ico');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .icon-10{
+    content: url('uniadelaideico.ico');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .icon-11{
+    content: url('UABico.ico');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .icon-12{
+    content: url('UNDico.ico');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .icon-13{
+    content: url('WSUico.ico');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .icon-14{
+    content: url('WFico.ico');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .icon-15{
+    content: url('HPUico.ico');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .icon-16{
+    content: url('UCRico.ico');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .icon-17{
+    content: url('WSUico.ico');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .icon-18{
+    content: url('Moodleico.ico');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .icon-19{
+    content: url('brightspaceico.ico');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .icon-20{
+    content: url('Canvasico.ico');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .icon-21{
+    content: url('Salesforceico.ico');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .icon-22{
+    content: url('Slackico.ico');
+    background-size: cover;
+    width: 70px;
+    height: 50px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .icon-23{
+    content: url('Confluenceico.ico');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .icon-24{
+    content: url('Jira.ico');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .icon-25{
+    content: url('gmailico.ico');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin-bottom: 10px;
+  }
   
+
   /******************************************************
-   * 5) DARK MODE OVERRIDES
+   * 6) DARK MODE OVERRIDES
    ******************************************************/
   .dark-mode {
     background: #1f2937;
