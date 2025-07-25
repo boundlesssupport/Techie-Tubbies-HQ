@@ -50,22 +50,18 @@
       <!-- CONTENT WRAPPER: Nav on left, main area on right -->
       <div id="contentWrapper">
         <!-- SIDE NAVIGATION -->
-        <nav class="side-nav">
-          <ul>
-            <li onclick="filterByCategory('all')">All</li>
-            <!--<li onclick="filterByCategory('recently-used')">Recently Used</li>-->
-            <li onclick="filterByCategory('must-haves')">Must-Haves</li>
-            <li onclick="filterByCategory('Support Tools')">Support Tools</li>
-            <li onclick="filterByCategory('boundless-toolkit')">
-              Boundless Toolkit
-            </li>
-            <li onclick="filterByCategory('lms')">LMS & School Portal</li>
-            <li onclick="filterByCategory('work')">Work</li>
-            <li onclick="filterByCategory('student-support')">
-              Student Support Page
-            </li>
-          </ul>
-        </nav>
+<nav class="side-nav">
+  <ul>
+    <li onclick="filterByCategory('all')">All</li>
+    <li onclick="filterByCategory('submit-task')">Submit Task</li> <!-- ✅ Added -->
+    <li onclick="filterByCategory('must-haves')">Must-Haves</li>
+    <li onclick="filterByCategory('Support Tools')">Support Tools</li>
+    <li onclick="filterByCategory('boundless-toolkit')">Boundless Toolkit</li>
+    <li onclick="filterByCategory('lms')">LMS & School Portal</li>
+    <li onclick="filterByCategory('work')">Work</li>
+    <li onclick="filterByCategory('student-support')">Student Support Page</li>
+  </ul>
+</nav>
 
         <!-- MAIN AREA -->
         <div class="main-area">
@@ -77,6 +73,23 @@
             <div class="app-grid"></div>
           </section>
           -->
+
+            <!-- SUBMIT TASK SECTION -->
+<section class="app-section" id="submit-task">
+  <h2>Submit a Task</h2>
+  <div class="app-grid">
+    <a
+      class="app-card"
+      data-app-id="submit-task"
+      href="https://yourusername.github.io/Techie-Tubbies-HQ/submit-task.html"  <!-- 🔁 Replace with real task form URL -->
+      target="_blank"
+      onclick="trackRecentlyUsed(event)"
+    >
+      <div class="app-icon">📝</div>
+      <div class="app-name">Create Team Task</div>
+    </a>
+  </div>
+</section>
 
             <!-- USEFUL LINKS -->
             <section class="app-section" id="must-haves">
