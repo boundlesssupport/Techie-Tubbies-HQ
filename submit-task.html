@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Submit Team Task</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #eaf0f6, #f9fbfd);
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            box-sizing: border-box;
+        }
+
+        h2 {
+            text-align: center;
+            color: #1b4f72;
+            font-size: 26px;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #34495e;
+            font-size: 15px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 14px;
+            margin-bottom: 24px;
+            border: 1px solid #dcdfe6;
+            border-radius: 8px;
+            font-size: 15px;
+            background-color: #fdfefe;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #5dade2;
+            box-shadow: 0 0 0 2px rgba(93, 173, 226, 0.2);
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .submit-button {
+            background-color: #1b4f72;
+            color: white;
+            padding: 14px 26px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background-color: #154360;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Submit Task for Assignment</h2>
+
+        <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DHs000004PJ71" method="POST">
+            <!-- Hidden Fields -->
+            <input type="hidden" name="orgid" value="00DHs000004PJ71">
+            <input type="hidden" name="retURL" value="https://boundlesssupport.github.io/Techie-Tubbies-HQ/">
+            <input type="hidden" name="recordType" value="012Qj000003mAJVIA2">
+            <input type="hidden" name="00NQj00000RgXAccount" value="001Qj00000olnQMIAY">
+            <input type="hidden" name="priority" value="Medium">
+
+            <!-- Email -->
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" maxlength="80" required>
+
+            <!-- Task Title -->
+            <label for="00NQj00000RgEtR">Task Title</label>
+            <input id="00NQj00000RgEtR" name="00NQj00000RgEtR" type="text" maxlength="255" required>
+
+            <!-- Task Description -->
+            <label for="00NQj00000Rg5SNMAZ">Task Description</label>
+            <textarea id="00NQj00000Rg5SNMAZ" name="00NQj00000Rg5SNMAZ" rows="5"></textarea>
+
+            <!-- Task Category -->
+            <label for="00NQj00000RgCV4">Task Category</label>
+            <select id="00NQj00000RgCV4" name="00NQj00000RgCV4" required>
+                <option value="">-- Select Category --</option>
+                <option value="Report &amp; Dashboard Tasks">Report &amp; Dashboard Tasks</option>
+                <option value="Knowledge Base Updates">Knowledge Base Updates</option>
+                <option value="Process &amp; SOP Updates">Process &amp; SOP Updates</option>
+                <option value="Data Review &amp; Cleanup">Data Review &amp; Cleanup</option>
+                <option value="Upskill">Upskill</option>
+                <option value="Team Support">Team Support</option>
+                <option value="Ad Hoc Task">Ad Hoc Task</option>
+            </select>
+
+            <!-- Start Date -->
+            <label for="00NQj00000RgJ0H">Start Date</label>
+            <input id="00NQj00000RgJ0H" name="00NQj00000RgJ0H" type="text" placeholder="MM/DD/YYYY" pattern="\d{2}/\d{2}/\d{4}" required>
+
+            <!-- Due Date -->
+            <label for="00NQj00000RgJ57">Due Date</label>
+            <input id="00NQj00000RgJ57" name="00NQj00000RgJ57" type="text" placeholder="MM/DD/YYYY" pattern="\d{2}/\d{2}/\d{4}" required>
+
+            <!-- Assigned Agent -->
+            <label for="00NQj00000Rgxc1">Assigned Team Member</label>
+            <select name="00NQj00000Rgxc1" id="00NQj00000Rgxc1" required>
+                <option value="">-- Select Agent --</option>
+                <option value="005Hs00000FHLr7IAH">AJ</option>
+                <option value="005Hs00000FI2ifIAD">Gugu</option>
+                <option value="005Hs00000FIEIIIA5">Chris</option>
+                <option value="005Hs00000FIEINIA5">Kamo</option>
+                <option value="005Hs00000FIEISIA5">Masego</option>
+                <option value="005Hs00000FIEIXIA5">Thebe</option>
+                <option value="005Hs00000FIEIcIAP">Tyrone</option>
+                <option value="005Hs00000FIOKQIA5">Ntando</option>
+                <option value="005Qj00000Z5RQ1IAN">Hlela</option>
+            </select>
+
+            <!-- Submit Button -->
+            <input type="submit" value="Submit Task" class="submit-button">
+        </form>
+    </div>
+
+    <!-- Auto-fill current date in MM/DD/YYYY format -->
+    <script>
+        const today = new Date();
+        const mm = String(today.getMonth() + 1).padStart(2, '0');
+        const dd = String(today.getDate()).padStart(2, '0');
+        const yyyy = today.getFullYear();
+        const currentDate = `${mm}/${dd}/${yyyy}`;
+
+        document.getElementById("00NQj00000RgJ0H").value = currentDate;
+        document.getElementById("00NQj00000RgJ57").value = currentDate;
+    </script>
+</body>
+
+</html>
